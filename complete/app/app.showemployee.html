@@ -1,0 +1,20 @@
+<h1>Show employe......</h1>
+<table border="2">
+    <tr>
+        
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Employee Salary</th>
+        <th>Employee Department</th>
+        <th>Action</th>
+       
+    </tr>
+    <tr *ngFor="let em of empAll|checkmyown:data;let i=index">
+        <td>{{em.empId}}</td>
+        <td>{{em.empName}}</td>
+        <td>{{em.empSalary|currency:'INR':true}}</td>
+        <td>{{em.empDepartment|lowercase}}</td>
+        <td><input type="button" value="delete" (click)="deleteEmployee(i)" />
+        
+    </tr>
+</table>
